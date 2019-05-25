@@ -14,10 +14,7 @@
 /*Route::get('/', function () {
     return view('welcome');
 });*/
-//Route::view('/home','home');
 
-//Route::get('/home',\App\Http\Controllers\HomeController::class,'showHome');
-
-Route::get('/','HomeController@showHome');
-//Route::get('home','HomeController@showHome');
+Route::get('/','HomeController@showHome')->name('home');
+Route::get('category/{slug}','HomeController@showProductsByCategory')->name('category');
 
