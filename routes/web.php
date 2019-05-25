@@ -18,3 +18,8 @@
 Route::get('/','HomeController@showHome')->name('home');
 Route::get('category/{slug}','HomeController@showProductsByCategory')->name('category');
 
+Route::get('login','AuthController@showLogin')->name('login');
+Route::post('login','AuthController@processLogin');
+Route::get('register','AuthController@showRegister')->name('register');
+Route::post('register','AuthController@processRegister');
+
