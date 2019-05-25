@@ -18,6 +18,6 @@
 
 //Route::get('/home',\App\Http\Controllers\HomeController::class,'showHome');
 
-Route::get('/','HomeController@showWelcome');
-Route::get('home','HomeController@showHome');
+Route::get('/','HomeController@showHome');
+//Route::get('home','HomeController@showHome');
 
