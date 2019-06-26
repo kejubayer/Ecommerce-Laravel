@@ -7,7 +7,7 @@
                     <p class="text-muted">{{config('app.name')}}</p>
                 </div>
                 <div class="col-sm-4 offset-md-1 py-4">
-                    <h4 class="text-white">Contact</h4>
+                    <h4 class="text-white">Menu</h4>
                     <ul class="list-unstyled">
                         <li>
                             <a href="{{route('register')}}" class="text-white">

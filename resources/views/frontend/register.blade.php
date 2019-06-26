@@ -3,31 +3,56 @@
 @section('main')
 
     <div class="container">
-        <form>
-            <div class="form-group">
-                <label for="inputAddress">Full Name</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Full name">
-            </div>
-            <div class="form-group">
-                <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="inputPassword4">Password</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="well">
+                    <h2 class="text-center col-mt-4">Register Your Account</h2>
+
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    <form action="{{route('register')}}" method="post" class="form form-horizontal">
+                        @csrf
+                        <div class="form-group">
+                            <label for="inputFullName">Full Name</label>
+                            <input type="text" name="full_name" class="form-control" id="inputFullName" placeholder="Full name">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputEmail">Email</label>
+                                <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputMobileNumber">Mobile Number</label>
+                                <input type="text" name="mobile_number" class="form-control" id="inputMobileNumber" placeholder="Mobile Number">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputPassword">Password</label>
+                                <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="confirm_password">Confirm Password</label>
+                                <input type="password" name="password_confirmation" class="form-control" id="confirm_password" placeholder="Confirm Password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputAddress">Address</label>
+                            <input type="text" name="address" class="form-control" id="inputAddress" placeholder="Banani, Dhaka, Bangladesh.">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    </form>
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="inputMobileNumber">Mobile Number</label>
-                    <input type="text" class="form-control" id="inputMobileNumber" placeholder="Mobile Number">
-                </div>
             </div>
-            <div class="form-group">
-                <label for="inputAddress">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="Dhaka, Bangladesh.">
-            </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
-        </form>
+        </div>
     </div>
 
     @stop
