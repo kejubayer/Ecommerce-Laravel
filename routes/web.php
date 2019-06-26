@@ -20,6 +20,10 @@ Route::get('category/{slug}','HomeController@showProductsByCategory')->name('cat
 
 Route::get('login','AuthController@showLogin')->name('login');
 Route::post('login','AuthController@processLogin');
+
 Route::get('register','AuthController@showRegister')->name('register');
 Route::post('register','AuthController@processRegister');
+
+Route::get('profile','AuthController@showProfile')->name('profile');
+Route::get('logout','AuthController@logout')->name('logout');
 
