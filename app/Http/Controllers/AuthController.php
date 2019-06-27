@@ -65,6 +65,10 @@ class AuthController extends Controller
 
     }
 
+    public function showProfile(){
+        return view('backend.profile');
+    }
+
     public function logout(){
         auth()->logout();
         $this->setSuccessMessage('User has been logout');
