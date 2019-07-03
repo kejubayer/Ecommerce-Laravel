@@ -8,21 +8,7 @@
                 <div class="well">
                     <h2 class="text-center col-mt-4">Register Your Account</h2>
 
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-
-                    @if(session()->has('message'))
-                        <div class="alert alert-{{session('type')}}">
-                            {{session('message')}}
-                        </div>
-                    @endif
+                    @include('backend.partials._message')
 
                     <form action="{{route('register')}}" method="post" class="form form-horizontal">
                         @csrf

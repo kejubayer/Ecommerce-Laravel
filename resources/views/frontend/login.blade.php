@@ -6,11 +6,7 @@
         <div class="row">
             <div class="col-md-6 offset-3">
                 <h2 class="text-center col-mt-4">Login to your account</h2>
-                @if(session()->has('message'))
-                    <div class="alert alert-{{session('type')}}">
-                        {{session('message')}}
-                    </div>
-                @endif
+                @include('backend.partials._message')
             <form action="{{route('login')}}" method="post">
                 @csrf
                 <div class="form-group">

@@ -25,6 +25,11 @@ Route::get('register','AuthController@showRegister')->name('register');
 Route::post('register','AuthController@processRegister');
 
 Route::get('profile','AuthController@showProfile')->name('profile');
+Route::get('edit_profile','AuthController@showEditProfile')->name('edit_profile');
+Route::post('edit_profile','AuthController@updateProfile');
+Route::post('password','AuthController@updatePassword')->name('password.update');
+
+
 Route::get('logout','AuthController@logout')->name('logout');
 
 Route::get('/dashboard','DashboardController@showDashboard')->name('dashboard');
